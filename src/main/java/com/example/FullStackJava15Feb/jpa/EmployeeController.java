@@ -1,12 +1,12 @@
 package com.example.FullStackJava15Feb.jpa;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class EmployeeController {
@@ -25,6 +25,33 @@ public class EmployeeController {
         return employeeRepository.findAll();
     }
 
+//    @DeleteMapping(value = "deleteById/{id}")
+//    public String deleteEmp(@PathVariable Long id){
+//        employeeRepository.deleteById(id);
+//        return "Employee deleted successfully...";
+//    }
 
+    @DeleteMapping(value = "deleteById/{id}")
+    public ResponseEntity<?> deleteEmp(@PathVariable Long id){
+
+        Optional<Employee> employee = employeeRepository.findById(id);
+        if(employee.isPresent()){
+            employeeRepository.delete(employee.get());
+            return new ResponseEntity<>(employee, HttpStatus.OK);
+        }else {
+            return new ResponseEntity<>("Record Not Found",HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PutMapping(value = "update/{id}")
+    public ResponseEntity<?> update (@PathVariable Long id,@RequestBody Employee employee){
+
+        Employee update = employeeRepository.findById(id).get();
+        update.setAddress(employee.getAddress());
+        update.setName(employee.getName());
+
+        employeeRepository.save(update);
+        return new ResponseEntity<>(update,HttpStatus.OK);
+    }
 
 }
