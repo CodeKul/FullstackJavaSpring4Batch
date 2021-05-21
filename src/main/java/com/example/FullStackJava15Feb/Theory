@@ -1,0 +1,40 @@
+ SQL => Sql stand for Structured query language.
+        It is designed for managing data in relational database management system(RDBMS)
+        It is used for creation ,updation ,deletion & fetching the data from database.
+
+        sql commands for mysql=>
+        1) create database dbName;
+        2) show databases;
+        3) use dbName;
+        4) show tables;
+        5) create table tblName(clmName datatype(size),....); (For int type no need to declare size)
+        6) desc table;
+        7) insert into tblName(clmName1,clmName2,....) values(1,'data','data'); (For int type no need of quotes)
+        8) select * from tblName;
+        9) select clmName1,clmName2 from tblName;
+       10) select * from tblName where clmName = yourValue
+       11) update tblName set clmName = value where clmName = value (If you don't use where clause then all row will be affected)
+       12) delete from tableName where clmName = value
+
+
+DDL => Data Defination language
+create
+alter
+drop
+
+DML => Data Manipulation Language
+Inert
+update
+delete
+
+DQL => Data Query Language
+Select
+
+A stored procedure is a set of precompiled SQL statements that are used to perform a special task.
+
+A stored procedure is mainly used to perform certain tasks on a database. For example
+
+1.Get database result sets from some business logic on data.
+2.Execute multiple database operations in a single call.
+3.Used to migrate data from one table to another table.
+4.Can be called for other programming languages, like Java.
