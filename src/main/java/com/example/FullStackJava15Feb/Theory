@@ -17,7 +17,7 @@
        12) delete from tableName where clmName = value
 
 
-DDL => Data Defination language
+DDL => Data Definition language
 create
 alter
 drop
@@ -38,3 +38,28 @@ A stored procedure is mainly used to perform certain tasks on a database. For ex
 2.Execute multiple database operations in a single call.
 3.Used to migrate data from one table to another table.
 4.Can be called for other programming languages, like Java.
+
+
+Joins => we can combine two or more table and fetch the data from tables.
+type of join =>
+1. Inner Join -> Return dataset that have matching values in both table
+2. Left Join -> Return all record from left table and matching record from right table.
+3. Right Join -> Return all record from right table and matching record from left table
+4. Full Join -> return all record when there is a match in either left table or right table.
+
+
+alter table employee add column test varchar(20);
+alter table employee rename column salary to employeeSalary;
+
+select * from employee  limit 2;
+select * from employee order by salary desc limit 1;
+select * from employee order by salary;
+select * from employee order by name Asc;
+select count(*) as employeeCount from employee;
+select count(*) from employee;
+select max(salary) from employee;
+select min(salary) from employee;
+select sum(salary) from employee;
+select avg(salary) from employee;
+select name,salary from employee;
+alter table employee add column salary int;

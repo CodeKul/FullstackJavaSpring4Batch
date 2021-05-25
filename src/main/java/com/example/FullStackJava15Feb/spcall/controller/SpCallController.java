@@ -23,4 +23,13 @@ public class SpCallController {
         List<Map<String,String>> list = spCallRepository.getCustomerData();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
+
+    @GetMapping(value = "innerJoin")
+    public ResponseEntity<?> getinnerJoin(){
+        List<Map<String,String>> list = spCallRepository.innerJoin();
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
+
+
 }

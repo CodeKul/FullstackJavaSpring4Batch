@@ -12,4 +12,8 @@ public interface SpCallRepository extends JpaRepository<Customer,Integer> {
 
     @Query(value = "{call getCustomer()}",nativeQuery = true)
     List<Map<String,String>> getCustomerData();
+
+    @Query(value = "{call newInnerJoin()}",nativeQuery = true)
+    List<Map<String,String>> innerJoin();
+
 }
