@@ -5,7 +5,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class GirlStudent {
 
-    public void study(){
+    public int study(){
         System.out.println("Girl study");
+        return 0;
     }
 }

@@ -31,7 +31,10 @@ public class FullStackJava15FebApplication {
 //        Human human = context.getBean(Human.class);
 //        human.wakeUp();
         BoyStudent boyStudent = context.getBean(BoyStudent.class);
-        boyStudent.study();
+        //joint point
+        boyStudent.studyBoys(2);
+        //joint point
+        boyStudent.studyA(3);
 
 //        human.wakeUp();
         GirlStudent girlStudy = context.getBean(GirlStudent.class);
