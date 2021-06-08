@@ -32,13 +32,13 @@ public class FullStackJava15FebApplication {
 //        human.wakeUp();
         BoyStudent boyStudent = context.getBean(BoyStudent.class);
         //joint point
-        boyStudent.studyBoys(2);
+        boyStudent.studyBoys(2,567);
         //joint point
-        boyStudent.studyA(3);
-
-//        human.wakeUp();
-        GirlStudent girlStudy = context.getBean(GirlStudent.class);
-        girlStudy.study();
+//        boyStudent.studyA(3);
+//
+////        human.wakeUp();
+//        GirlStudent girlStudy = context.getBean(GirlStudent.class);
+//        girlStudy.study();
 
     }
 
