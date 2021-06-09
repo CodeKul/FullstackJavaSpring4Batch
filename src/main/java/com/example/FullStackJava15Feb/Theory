@@ -63,3 +63,28 @@ select sum(salary) from employee;
 select avg(salary) from employee;
 select name,salary from employee;
 alter table employee add column salary int;
+
+
+Mongo DB-
+
+mongo
+
+show dbs
+
+use dbname
+
+show collections
+
+db.employee.insert({name:"Sachin",address:"Pune",salary:34234})
+
+db.employee.find()
+
+db.employee.find().pretty()
+
+db.employee.insertOne({name:"Akash",address:"Kolhapur",salary:4354})
+
+db.employee.find({name:"Akash"});
+
+db.employee.find({name:"Akash"},{address:0}).pretty()
+
+db.employee.find({name:"Akash"},{name:1 ,_id:0}).pretty()
