@@ -88,3 +88,15 @@ db.employee.find({name:"Akash"});
 db.employee.find({name:"Akash"},{address:0}).pretty()
 
 db.employee.find({name:"Akash"},{name:1 ,_id:0}).pretty()
+
+db.employee.find().pretty().limit(1)
+
+db.employee.find().pretty().limit(1).skip()
+
+db.employee.updateOne({name:"Sujeet"},{$set:{name:"Suhas"}})
+
+db.employee.updateMany({name:"Suhas"},{$set:{name:"Sujeet"}})
+
+db.employee.deleteOne({name:"Nitin"})
+
+db.employee.deleteMany({name:"Sujeet"})
